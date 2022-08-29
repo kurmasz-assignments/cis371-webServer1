@@ -73,13 +73,21 @@ public class MyStaticWebServer {
       String command = input.readLine();
       System.out.println("Command Received: =>" + command + "<=");
 
+      // Sometimes the client doesn't "hang up" right away.  
+      // If it doesn't then, the command will end up being null
+      // When this happens, just continue and wait for the next connection.
+      if (command == null) {
+        continue;
+      }
+
+
       // Read the request headers
       System.out.println("\nRequest Headers:");
       String headerLine = input.readLine();
       while (headerLine != null && !headerLine.isEmpty()) {
         System.out.println("\t" + headerLine);
         headerLine = input.readLine();
-      }
+      }cd 
 
       // split the command by spaces.
       String[] parts = command.split("\\s+");
