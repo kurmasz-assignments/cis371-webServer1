@@ -1,9 +1,0 @@
-language: java
-dist: bionic
-before_install:
-- tar -xf secretTests.tar
-script: make build && make test
-notifications:
-  email:
-    on_success: always
-    on_failure: always

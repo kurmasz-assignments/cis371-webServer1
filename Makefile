@@ -3,6 +3,7 @@ build: MyStaticWebServer.class
 
 # If you add other java classes, just copy this rule and follow the pattern
 MyStaticWebServer.class: MyStaticWebServer.java
+	grep -L "Put your information here" MyStaticWebServer.java || (echo "Please put your name in source files." && false)
 	javac $^
 
 # Used by the CI Server to run your server on the test data.
