@@ -138,7 +138,4 @@ public class MyStaticWebServer {
 
     // When the connection ends, so does this program.
   }
-
-
-
 }

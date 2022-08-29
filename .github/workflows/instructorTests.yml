@@ -1,0 +1,15 @@
+name: Connect 4 Check
+on: 
+   workflow_dispatch:
+   push:
+      tags:
+         - checkMe*
+jobs:
+   run-instructor-tests:
+      runs-on: ubuntu-latest
+      steps:
+         - uses: actions/checkout@v3
+         - run: curl https://zk-autograde.herokuapp.com/test
+         - run: make build
+         - run: curl https://zk-autograde.herokuapp.com/Autograde/webServerTests.tar --output spec/webServerTests.tar
+         - run: make test
