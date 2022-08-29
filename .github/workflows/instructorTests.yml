@@ -1,4 +1,4 @@
-name: Connect 4 Check
+name: Web Server Check
 on: 
    workflow_dispatch:
    push:
@@ -11,5 +11,6 @@ jobs:
          - uses: actions/checkout@v3
          - run: curl https://zk-autograde.herokuapp.com/test
          - run: make build
-         - run: curl https://zk-autograde.herokuapp.com/Autograde/webServerTests.tar --output spec/webServerTests.tar
+         - run: curl https://zk-autograde.herokuapp.com/Autograde/webServerTests.tar --output webServerTests.tar
+         - run: tar -xf webServerTests.tar
          - run: make test
