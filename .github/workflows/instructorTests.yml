@@ -9,9 +9,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - uses: actions/checkout@v3
-         - run: curl https://zk-autograde.herokuapp.com/test
          - run: make build
          - run: java --version
-         - run: curl https://zk-autograde.herokuapp.com/Autograde/webServerTests.tar --output webServerTests.tar
+         - run: curl https://autograder.computing.gvsu.edu/webServerTests.tar --output webServerTests.tar
          - run: tar -xf webServerTests.tar
          - run: make test
