@@ -11,6 +11,6 @@ jobs:
          - uses: actions/checkout@v3
          - run: make build
          - run: java --version
-         - run: curl https://autograder.computing.gvsu.edu/webServerTests.tar --output webServerTests.tar
+         - run: curl https://autograder.computing.gvsu.edu/webServerTests.tar --output webServerTests.tar -k
          - run: tar -xf webServerTests.tar
          - run: make test
